@@ -4,7 +4,7 @@
     "description": "social network API",
     "main": "index.js",
     "scripts": {
-        "test": "mocha",
+        "test": "mocha --recursive --reporter mocha-junit-reporter --timeout 60000 --exit",
         "start": "node index.js",
         "dev": "nodemon index.js"
     },
