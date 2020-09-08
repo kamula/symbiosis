@@ -1,31 +1,38 @@
 {
-  "name": "symbiosis",
-  "version": "1.0.0",
-  "description": "social network API",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kamula/symbiosis.git"
-  },
-  "author": "isaac",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kamula/symbiosis/issues"
-  },
-  "homepage": "https://github.com/kamula/symbiosis#readme",
-  "dependencies": {
-    "babel-preset-airbnb": "^5.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.2.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.1"
-  }
+    "name": "symbiosis",
+    "version": "1.0.0",
+    "description": "social network API",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js",
+        "dev": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kamula/symbiosis.git"
+    },
+    "author": "isaac",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kamula/symbiosis/issues"
+    },
+    "homepage": "https://github.com/kamula/symbiosis#readme",
+    "dependencies": {
+        "babel-preset-airbnb": "^5.0.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "mongodb": "^3.6.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "eslint": "^7.2.0",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "nodemon": "^2.0.4",
+        "prettier": "^2.1.1"
+    }
 }
