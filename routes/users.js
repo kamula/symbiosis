@@ -1,14 +1,26 @@
 const express = require("express");
-const Postuser = require("../models/users")
+const MongoClient = require("mongodb").MongoClient
+require("dotenv/config")
 const router = express.Router();
 
+const url = process.env.USER_DB
 
-router.post("/register", (req, res) => {
+const client = new MongoClient(url)
 
-});
-router.get("/user", (req, res) => {
-
-});
-router.patch("/update", (req, res) => {});
-router.delete("/delete", (req, res) => {});
-module.exports = router;
+client.connect((err, client) => {
+    if (err) {
+        throw err
+    } else {
+        const db = client.db("symbiosis")
+        console.log("connected to db")
+        router.post("/register", (req, res) => {
+            db.collection("users").insertOne({
+                firstname: req.body.firstname,
+                lastname: req.body.lastname,
+                email: req.body.email,
+                datejoined: Date.now
+            })
+        })
+    }
+})
+module.exports = router
