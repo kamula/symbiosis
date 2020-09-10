@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const MongoClient = require('mongodb').MongoClient;
 require('dotenv/config');
 const router = express.Router();
+const sendmail = require("./mail")
 
 const url = process.env.USER_DB;
 
@@ -17,7 +18,10 @@ client.connect((err, client) => {
         router.post('/register', (req, res) => {
             let password = req.body.password;
             let password2 = req.body.password2;
-            if (password === password2) {
+            if (password !== password2) {
+
+                res.json({ message: 'passwords dont match' });
+            } else {
                 bcrypt.hash(password, 10).then((hash) => {
                     let data = {
                         firstname: req.body.firstname,
@@ -29,10 +33,10 @@ client.connect((err, client) => {
                     db.collection('users').insertOne({
                         data,
                     });
+                    sendmail(data["email"])
                     res.json(data);
                 });
             }
-            res.json({ message: 'passwords dont match' });
         });
         //get all users user
         router.get('/details', async(req, res) => {

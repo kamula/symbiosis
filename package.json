@@ -25,7 +25,8 @@
         "chai": "^4.2.0",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
-        "mongodb": "^3.6.1"
+        "mongodb": "^3.6.1",
+        "nodemailer": "^6.4.11"
     },
     "devDependencies": {
         "@babel/core": "^7.11.6",
