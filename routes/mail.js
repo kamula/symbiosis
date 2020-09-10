@@ -4,12 +4,12 @@ const sendmail = (sendto) => {
     let transporter = nodemailer.createTransport({
         host: "smtp.ethereal.email",
         auth: {
-            user: "hostemailaddress",
+            user: "enrico.dicki49@ethereal.email",
             pass: process.env.PASS
         }
     })
     let mailoptions = {
-        from: "senderemailaddress",
+        from: "enrico.dicki49@ethereal.email",
         to: sendto,
         subject: "registration info",
         text: "successfully registered"
