@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv/config');
 const router = express.Router();
 const sendmail = require('./mail');
-const authuser = require('./authuser');
+//const authuser = require('./authuser');
 
 const url = process.env.USER_DB;
 
