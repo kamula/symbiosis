@@ -4,6 +4,6 @@ const { describe } = require("mocha")
 
 describe("app", () => {
     it("return object", () => {
-        assert.typeOf(app, "object")
+        return assert.typeOf(app, "object")
     })
 })
