@@ -4,7 +4,7 @@
 name: Node.js CI
 env:
   USER_DB: ${{secrets.USER_DB}}
-  pass: ${{secrets.pass}}
+  PASS: ${{secrets.pass}}
 
 on:
   push:
