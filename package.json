@@ -4,7 +4,7 @@
     "description": "social network API",
     "main": "index.js",
     "scripts": {
-        "test": "mocha test/testapp.js --timeout 5000",
+        "test": "mocha test/testapp.js",
         "start": "node index.js",
         "dev": "nodemon index.js"
     },
