@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv/config');
 const router = express.Router();
 const sendmail = require('./mail');
+const { ObjectID } = require('mongodb');
 //const authuser = require('./authuser');
 
 const url = process.env.USER_DB;
@@ -86,11 +87,11 @@ client.connect((err, client) => {
                 });
         });
         //remove user
-        router.delete('/:userId', async(req, res) => {
+        router.delete('/delete/:userId', async(req, res) => {
             try {
                 const deleteduser = await db
                     .collection('users')
-                    .deleteOne({ _id: req.params.userId });
+                    .deleteOne({ _id: ObjectID(req.params.userId) });
                 res.json(deleteduser);
             } catch (err) {
                 throw err;
