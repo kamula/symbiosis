@@ -97,6 +97,20 @@ client.connect((err, client) => {
                 throw err;
             }
         });
+        //update user password
+        // router.patch("/password/:id", async(req, res) => {
+
+        //     try {
+
+        //         await db.collection("users").updateOne({ _id: req.params._id }, { $set: await bcrypt.hash(req.body.password, 10) })
+        //         res.status(200).json({ "message": "updated" })
+
+
+        //     } catch (err) {
+        //         res.status(403).json({ "message": err })
+        //     }
+
+        // })
     }
 });
 
