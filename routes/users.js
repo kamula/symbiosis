@@ -6,7 +6,7 @@ require('dotenv/config');
 const router = express.Router();
 const sendmail = require('./mail');
 const { ObjectID } = require('mongodb');
-//const authuser = require('./authuser');
+
 
 const url = process.env.USER_DB;
 
